@@ -1,0 +1,6 @@
+@FindChest_HostAddress = http://localhost:5121
+
+GET {{FindChest_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

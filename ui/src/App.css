@@ -1,0 +1,49 @@
+.centered-table {
+  height: fit-content;
+  text-align: center;
+  margin: 20px 10px;
+  padding: 20px 20px;
+  border: 1px solid #cccc;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.centered-matrix-grid {
+  margin: px;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 4px;
+}
+
+.table-style{
+  width: auto; 
+  overflow: hidden
+}
+
+.scrollable-matrix-box{
+  margin-top: 10px;
+  max-width: fit-content;
+  max-height: 220px;
+  overflow-x: auto !important;
+  overflow-y: auto !important;
+}
+
+.scrollable-x-matrix{
+  margin-top: 8px;
+  flex-wrap: nowrap !important;
+  min-width: fit-content !important
+}
+
+.input-field{
+  width: 150px 
+}
+
+.input-matrix{
+  width: 60px
+}
+
+.output-field{
+  width: 200px
+}

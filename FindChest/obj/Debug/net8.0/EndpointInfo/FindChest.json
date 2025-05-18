@@ -1,0 +1,178 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "FindChest",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/FindChest/create": {
+      "post": {
+        "tags": [
+          "FindChest"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MapViewModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MapViewModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MapViewModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/FindChest/listmap": {
+      "get": {
+        "tags": [
+          "FindChest"
+        ],
+        "parameters": [
+          {
+            "name": "row",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "column",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "typeCount",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/FindChest/{id}": {
+      "get": {
+        "tags": [
+          "FindChest"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/FindChest/updateminfuel/{id}": {
+      "post": {
+        "tags": [
+          "FindChest"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "MapViewModel": {
+        "required": [
+          "chestTypeCount",
+          "columnCount",
+          "mapData",
+          "rowCount"
+        ],
+        "type": "object",
+        "properties": {
+          "rowCount": {
+            "maximum": 500,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "columnCount": {
+            "maximum": 500,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "chestTypeCount": {
+            "maximum": 2147483647,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "mapData": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          },
+          "minFuel": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
